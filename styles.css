@@ -27,7 +27,7 @@ body{
 }
 .slide-area div{
     width:100%;
-    height: 100%;
+    height: 70%;
     position: absolute;
     transition: all 1s;
     background-size: cover;
