@@ -178,17 +178,17 @@ const formValidator = (form, fieldsConfig, onValidateSuccess, onValidationError)
       ]
     },
     {
-        name: 'Mobile Number',
+        name: 'Mobile number',
         rules: [
           {required: true, message: 'Mobile number is required.'},
-          {maxLength: 10, message: 'სიბოლოების რაოდენობა არ უნდა იყოს 9 ზე ნაკლები'},
+          {maxLength: 13, minLength:9, message: 'სიბოლოების რაოდენობა არ უნდა იყოს 9 ზე ნაკლები'},
         ]
     },
       {
-        name: 'fPersonal Number',
+        name: 'Personal Number',
         rules: [
-          {required: true, message: 'ID number is required.'},
-          {maxLength: 10, message: 'სიბოლოების რაოდენობა უნდა იყოს 12-ის ტოლი'},
+          {required: true, message: 'Personal Number is required.'},
+          {maxLength: 12, minLength:12, message: 'სიბოლოების რაოდენობა უნდა იყოს 12-ის ტოლი'},
         ]
     },
    ];
