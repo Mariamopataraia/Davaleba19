@@ -105,7 +105,11 @@ const formValidator = (form, fieldsConfig, onValidateSuccess, onValidationError)
         if (rule.maxLength && `${value}`.length > rule.maxLength) {
           fieldValidationResult.errors.push(rule.message);
         }
+        if (rule.minLength && `${value}`.length < rule.minLength) {
+            fieldValidationResult.errors.push(rule.message);
+        }
       });
+      
   
       if(fieldValidationResult.errors.length > 0){
         errorElement.innerText = fieldValidationResult.errors.join('\n');
@@ -178,10 +182,12 @@ const formValidator = (form, fieldsConfig, onValidateSuccess, onValidationError)
       ]
     },
     {
-        name: 'Mobile number',
+        name: 'Mobile Number',
         rules: [
           {required: true, message: 'Mobile number is required.'},
-          {maxLength: 13, minLength:9, message: 'სიბოლოების რაოდენობა არ უნდა იყოს 9 ზე ნაკლები'},
+          {maxLength: 13, message: 'სიბოლოების რაოდენობა არ უნდა იყოს 9 ზე ნაკლები'},
+          {minLength:9, message: 'სიმბოლოების რაოდენობა უნდა იყოს 13-ის ტოლი'},
+          {mobileNumber: true, message: 'გთხოვთ შეიყვანოთ მხოლოდ ციფრები'},
         ]
     },
       {
