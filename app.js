@@ -108,7 +108,8 @@ const formValidator = (form, fieldsConfig, onValidateSuccess, onValidationError)
         if (rule.minLength && `${value}`.length < rule.minLength) {
             fieldValidationResult.errors.push(rule.message);
         }
-        if (rule.mobileNumber && `${value}`.type != /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/){
+        if (rule.Mobilenumber && `${value}`.type != /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im   ){
+            
             fieldValidationResult.errors.push(rule.message);
         }
       });
